@@ -1,4 +1,4 @@
-import {conn , handleError }  from "../config/conn.js";
+import { conn, handleError } from "../config/conn.js";
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 
@@ -8,7 +8,7 @@ export const ALLpalestrante = (request, response) => {
             "SELECT * FROM palestrante",
             (err, results) => {
                 if (err) {
-                    handleError(response, err, "Erro ao buscar todos os palestrantes" );
+                    handleError(response, err, "Erro ao buscar todos os palestrantes");
                 } else {
                     response.status(200).json(results);
                 }
